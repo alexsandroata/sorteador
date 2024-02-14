@@ -33,9 +33,15 @@
 </div>
 
 <script>
-var jogadores = [];
+var jogadores = ["Jogador 1", "Jogador 2", "Jogador 3"];
 var time1 = [];
 var time2 = [];
+
+window.onload = function() {
+    for (var i = 0; i < jogadores.length; i++) {
+        document.getElementById("jogadores").innerHTML += "<li>" + jogadores[i] + "</li>";
+    }
+}
 
 function adicionarJogador() {
     var nome = document.getElementById("nome").value;
