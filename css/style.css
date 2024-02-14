@@ -60,3 +60,8 @@ ul li {
     font-size: 18px;
     text-align: center;
 }
+
+ul li:hover {
+    background-color: #ffcccc; /* vermelho claro */
+    cursor: pointer;
+}
