@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sorteio de Times</title>
     <link rel="stylesheet" href="css/style.css">
+    <audio id="buttonLimitSound" src="fx/sound/button_sortear.wav" preload="auto"></audio>
+    <audio id="buttonCleanSound" src="fx/sound/button_limpar.mp3" preload="auto"></audio>
 </head>
 
 <body>
 
-<h2>Adicionar jogadores</h2>
+<h1>CS DOS CRIA</h1>
 
 <input type="text" id="nome" placeholder="Nome do jogador">
 <button onclick="adicionarJogador()">Adicionar</button>
 
-<h3>Jogadores</h3>
+<!-- <h3>Jogadores</h3> -->
 <ul id="jogadores"></ul>
 
 <div class="botoes">
@@ -24,12 +26,12 @@
 
 <div id="times">
     <div id="time1">
-        <h3>OS CURURU</h3>
+        <h2>TERRORISTAS</h2>
         <ul id="listaTime1"></ul>
     </div>
 
     <div id="time2">
-        <h3>OS TOXINHA</h3>
+        <h2>CONTRA-TERRORISTA</h2>
         <ul id="listaTime2"></ul>
     </div>
 </div>

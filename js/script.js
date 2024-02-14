@@ -1,21 +1,32 @@
 var jogadores = ["Bash", "Berex", "Caçador", "GORDINHO", "H1dro", "Killer", "mAI0NESY", "Maksmiller", "Mikasa", "Pivete", "QueenLatifa", "Rafaela", "Tiradentesgg", "Xandyn"];
-        var time1 = [];
-        var time2 = [];
+var time1 = [];
+var time2 = [];
 
-        window.onload = function() {
-            for (var i = 0; i < jogadores.length; i++) {
-                var li = document.createElement("li");
-                li.textContent = jogadores[i];
-                li.addEventListener("click", function(e) {
-                    var index = jogadores.indexOf(e.target.textContent);
-                    if (index !== -1) {
-                        jogadores.splice(index, 1);
-                        e.target.remove();
-                    }
-                });
-                document.getElementById("jogadores").appendChild(li);
+window.onload = function() {
+    for (var i = 0; i < jogadores.length; i++) {
+        var li = document.createElement("li");
+        li.textContent = jogadores[i];
+        li.addEventListener("click", function(e) {
+            var index = jogadores.indexOf(e.target.textContent);
+            if (index !== -1) {
+                jogadores.splice(index, 1);
+                e.target.remove();
             }
-        }
+        });
+        document.getElementById("jogadores").appendChild(li);
+    }
+
+    // Adicione o evento de clique ao botão "Sortear Times"
+    document.querySelector('button[onclick="adicionarJogador()"]').addEventListener('click', function() {
+        document.getElementById('buttonLimitSound').play();
+    });
+    document.querySelector('button[onclick="sortearTimes()"]').addEventListener('click', function() {
+        document.getElementById('buttonLimitSound').play();
+    });
+    document.querySelector('button[onclick="limparNomes()"]').addEventListener('click', function() {
+        document.getElementById('buttonCleanSound').play();
+    });
+}
 
 function adicionarJogador() {
     var nome = document.getElementById("nome").value;
