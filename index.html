@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteio de Times</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<h2>Adicionar jogadores</h2>
+
+<input type="text" id="nome" placeholder="Nome do jogador">
+<button onclick="adicionarJogador()">Adicionar</button>
+
+<h3>Jogadores</h3>
+<ul id="jogadores"></ul>
+
+<button onclick="sortearTimes()">Sortear Times</button>
+<button onclick="limparNomes()">Limpar Nomes</button>
+
+<div id="times">
+    <div id="time1">
+        <h3>Time 1</h3>
+        <ul id="listaTime1"></ul>
+    </div>
+
+    <div id="time2">
+        <h3>Time 2</h3>
+        <ul id="listaTime2"></ul>
+    </div>
+</div>
+
+<script>
+var jogadores = [];
+var time1 = [];
+var time2 = [];
+
+function adicionarJogador() {
+    var nome = document.getElementById("nome").value;
+    if (nome.trim() !== "") {
+        jogadores.push(nome);
+        document.getElementById("jogadores").innerHTML += "<li>" + nome + "</li>";
+        document.getElementById("nome").value = "";
+    }
+}
+
+function sortearTimes() {
+    // Limpar as equipes
+    time1 = [];
+    time2 = [];
+    document.getElementById("listaTime1").innerHTML = "";
+    document.getElementById("listaTime2").innerHTML = "";
+
+    // Embaralhar a lista de jogadores
+    jogadores.sort(() => Math.random() - 0.5);
+
+    // Distribuir os jogadores entre as equipes
+    for (var i = 0; i < jogadores.length; i++) {
+        if (i % 2 == 0) {
+            time1.push(jogadores[i]);
+            document.getElementById("listaTime1").innerHTML += "<li>" + jogadores[i] + "</li>";
+        } else {
+            time2.push(jogadores[i]);
+            document.getElementById("listaTime2").innerHTML += "<li>" + jogadores[i] + "</li>";
+        }
+    }
+}
+
+function limparNomes() {
+    jogadores = [];
+    document.getElementById("jogadores").innerHTML = "";
+}
+</script>
+
+</body>
+</html>
