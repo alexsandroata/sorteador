@@ -65,3 +65,9 @@ ul li:hover {
     background-color: #ffcccc; /* vermelho claro */
     cursor: pointer;
 }
+
+.botoes {
+    display: flex;
+    justify-content: space-between;
+    width: 420px; /* Ajuste conforme necessário */
+}
